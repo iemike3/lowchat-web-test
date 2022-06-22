@@ -1,6 +1,6 @@
 {
-    "name": "Lowchat",
-    "short_name": "Lowchat",
+    "name": "Lowchat2",
+    "short_name": "Lowchat2",
     "description": "シンプルなメッセージサービス",
     "start_url": "/",
     "display": "standalone",
