@@ -1,0 +1,22 @@
+{
+    "name": "Lowchat",
+    "short_name": "Lowchat",
+    "description": "シンプルなメッセージサービス",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "icons": [
+        {
+            "src": "logo_kari1_192.jpg",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "logo_kari1_256.jpg",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ],
+    "orientation": "any"
+}

@@ -1,0 +1,122 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+body {
+    background-color: #f4f5f7;
+}
+
+.lc_header {
+    width: 100%;
+    height: 55px;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    background-color: #ffffff;
+}
+
+.lc_header .left_btn {
+    margin-right: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+}
+
+.lc_header .left_btn .material-symbols-outlined {
+    color: black;
+}
+
+.lc_header .right_btns {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.lc_header .right_btns .btn {
+    height: 55px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.lc_footer {
+    width: 100%;
+    height: 55px;
+    padding-bottom: env(safe-area-inset-bottom);
+    /*padding-left: 15%;
+    padding-right: 15%;
+    box-sizing: border-box;*/
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    background-color: #ffffff;
+}
+
+.lc_footer .menu_item {
+    width: 100%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.lc_footer .menu_item .container {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.lc_footer .menu_item .container .bottom_text {
+    margin-top: -5px;
+    font-size: 0.8rem;
+    color: black;
+}
+
+.lc_footer .menu_item .container .material-symbols-outlined {
+    color: black;
+}
+
+.lc_main {
+    padding-top: 55px;
+    padding-bottom: 55px;
+}
+
+.lc_main_hash {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.5);
+    transition: all 400ms;
+}
+
+.lc_main_hash_active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.lc_main_hash .container {
+    width: 100%;
+    height: 100vh;
+    margin-left: 100vh;
+    background-color: #ffffff;
+    transition: margin 500ms;
+}
+
+.lc_main_hash .container_active {
+    margin-left: 0;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lowchat</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link reL="stylesheet" href="css/major_style.css">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="apple-touch-icon" href="logo_kari1_256.jpg">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <script>
+        if('serviceWorker' in navigator){
+            navigator.serviceWorker.register('c-sw.js').then(function(){
+                console.log("Service Worker is registered");
+            });
+        }
+
+        function bodyload() {
+            /*const link_btn = document.getElementById('link-btn');
+            link_btn.addEventListener('click', async () => {
+                try {
+                    await navigator.share({
+                        title: 'Share API で共有！',
+                        text: 'ご覧の通り、お手軽にSNSにリンクを供することができます。',
+                        url: 'https://example.com/hogehoge',
+                    })
+                    alert("正解や。");
+                } catch(err) {
+                    alert('Error: ' + err);
+                };
+            });*/
+            if (location.hash == "#settings") {
+                OpenPopup()
+            }
+            
+            window.addEventListener('hashchange', () => {
+                if (location.hash == "#settings") {
+                    OpenPopup()
+                }
+            }, false);
+
+            window.addEventListener('popstate', function(e) {
+                if (location.hash == "") {
+                    ClosePopup()
+                }
+            });
+
+            }
+
+        function OpenPopup() {
+            document.getElementById("lmh").classList.add("lc_main_hash_active")
+            document.getElementById("lmh_c").classList.add("container_active")
+        }
+        
+        function ClosePopup() {
+            document.getElementById("lmh").classList.remove("lc_main_hash_active")
+            document.getElementById("lmh_c").classList.remove("container_active")
+        }
+
+    </script>
+</head>
+<body onload="bodyload()">
+    <header class="lc_header">
+        <!--
+        <button type="button" class="left_btn">
+            <span class="material-symbols-outlined">
+                arrow_back_ios
+            </span>
+        </button>
+        -->
+        <h3 class="title">
+            ホーム
+        </h3>
+        <div class="right_btns">
+            <a class="btn" href="#settings">
+                <span class="material-symbols-outlined">
+                    settings
+                </span>
+            </a>
+        </div>
+    </header>
+    <main class="lc_main">
+        
+    </main>
+    <div class="lc_main_hash" id="lmh">
+        <div class="container" id="lmh_c">
+            <!--replaceState(null, null, ' ');-->
+            <header class="lc_header">
+                <button type="button" class="left_btn" onclick="ClosePopup();history.back()">
+                    <span class="material-symbols-outlined">
+                        arrow_back
+                    </span>
+                </button>
+                <h3 class="title">
+                    設定
+                </h3>
+            </header>
+            ポップアップ
+        </div>
+    </div>
+    <footer class="lc_footer">
+        <a class="menu_item" href="#">
+            <div class="container">
+                <span class="material-symbols-outlined">
+                    house
+                </span>
+                <p class="bottom_text">
+                    ホーム
+                </p>
+            </div>
+        </a>
+        <a class="menu_item" href="#">
+            <div class="container">
+                <span class="material-symbols-outlined">
+                    chat_bubble
+                </span>
+                <p class="bottom_text">
+                    トーク
+                </p>
+            </div>
+        </a>
+    </footer>
+</body>
+</html>
