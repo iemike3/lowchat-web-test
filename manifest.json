@@ -2,7 +2,7 @@
     "name": "Lowchat2",
     "short_name": "Lowchat2",
     "description": "シンプルなメッセージサービス",
-    "start_url": "/",
+    "start_url": "/lowchat-web-test/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#ffffff",
