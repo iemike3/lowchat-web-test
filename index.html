@@ -35,23 +35,26 @@
                     alert('Error: ' + err);
                 };
             });*/
+            // hashが#settingsならポッアップ
             if (location.hash == "#settings") {
                 OpenPopup()
             }
             
+            // hashが#settingsに変わったらポップアップ
             window.addEventListener('hashchange', () => {
                 if (location.hash == "#settings") {
                     OpenPopup()
                 }
             }, false);
 
+            // hashがなくなったら粛清
             window.addEventListener('popstate', function(e) {
                 if (location.hash == "") {
                     ClosePopup()
                 }
             });
 
-            }
+        }
 
         function OpenPopup() {
             document.getElementById("lmh").classList.add("lc_main_hash_active")
@@ -105,7 +108,7 @@
         </div>
     </div>
     <footer class="lc_footer">
-        <a class="menu_item" href="#">
+        <a class="menu_item" href="index.html">
             <div class="container">
                 <span class="material-symbols-outlined">
                     house
@@ -115,7 +118,7 @@
                 </p>
             </div>
         </a>
-        <a class="menu_item" href="#">
+        <a class="menu_item" href="talk.html">
             <div class="container">
                 <span class="material-symbols-outlined">
                     chat_bubble
