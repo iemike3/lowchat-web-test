@@ -22,25 +22,12 @@
         }
 
         function bodyload() {
-            /*const link_btn = document.getElementById('link-btn');
-            link_btn.addEventListener('click', async () => {
-                try {
-                    await navigator.share({
-                        title: 'Share API で共有！',
-                        text: 'ご覧の通り、お手軽にSNSにリンクを供することができます。',
-                        url: 'https://example.com/hogehoge',
-                    })
-                    alert("正解や。");
-                } catch(err) {
-                    alert('Error: ' + err);
-                };
-            });*/
-            if (location.hash == "#settings") {
+            if (location.hash.startsWith("#sc")) {
                 OpenPopup()
             }
             
             window.addEventListener('hashchange', () => {
-                if (location.hash == "#settings") {
+                if (location.hash.startsWith("#sc")) {
                     OpenPopup()
                 }
             }, false);
@@ -67,26 +54,17 @@
 </head>
 <body onload="bodyload()">
     <header class="lc_header">
-        <!--
-        <button type="button" class="left_btn">
-            <span class="material-symbols-outlined">
-                arrow_back_ios
-            </span>
-        </button>
-        -->
         <h3 class="title">
-            ホーム
+            トーク
         </h3>
         <div class="right_btns">
-            <a class="btn" href="#settings">
-                <span class="material-symbols-outlined">
-                    settings
-                </span>
-            </a>
+            
         </div>
     </header>
     <main class="lc_main">
-        
+        <a class="btn" href="#sc">
+            open talk window
+        </a>
     </main>
     <div class="lc_main_hash" id="lmh">
         <div class="container" id="lmh_c">
@@ -96,9 +74,14 @@
                         arrow_back
                     </span>
                 </button>
-                <h3 class="title">
-                    設定
-                </h3>
+                <div class="titsub">
+                    <h3 class="title">
+                        iemike3
+                    </h3>
+                    <p class="subtitle">
+                        @iemike3
+                    </p>
+                </div>
             </header>
             ポップアップ
         </div>
